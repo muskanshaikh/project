@@ -1,0 +1,131 @@
+<html>
+    <h1></h1>
+    <head>
+        
+        <link rel="stylesheet"  href="about(1).css" type="text/css">
+        <link rel="shortcut icon" type="img/png" href="img/nf.jpg">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    </head>
+    <body>
+    <h1 id="grill">Grill And Chill Restaurant</h1>
+    <img src="logo.jpg" id="img"></img>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="rest.html" title="Register/login">Home</a></li>
+    
+                    <li><a href="menu.html">Menu</a></li>
+                    
+                    <li><a href="Reservation.html">Online Reservation</a></li>
+    
+                    <li><a href="about(1).html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <body>
+        <?php
+
+session_start();
+$db=mysqli_connect("localhost","root","root");
+if(!$db){
+  die("database connection failed" .mysqli_error($db));
+}
+
+$select_db=mysqli_select_db($db,'rest');
+ if(!$select_db){
+  die("database selection failed" .mysqli_error($db));
+}  
+
+
+if(isset($_POST['sub_btn'])){
+
+  $user=$_POST['user'];
+  $pass=$_POST['pass'];
+   $db=mysqli_connect("localhost","root","root","rest");
+  $sql="SELECT * FROM sign WHERE username='$user' AND password='$pass'";
+
+  $result=mysqli_query($db,$sql);
+  $count=mysqli_num_rows($result);
+  if($count==1){
+   $_SESSION['username']=$user;
+ 
+  }
+  else{
+  
+  header('location:rest.php');
+  }
+}
+
+
+?>
+
+        <div class="slideshow">
+    <hr>
+    <img src ="citizen6.jpg"  id="slideimage">
+    </div>
+        <main>
+                <div class="contact">
+                        <h3> Location & Hours</h3>
+                    <p> Terry Francois Street
+                        <br/>
+                         San Francisco, CA 94158
+                         <br/>
+                         Open Monday to Friday 12pm to 10pm
+                         <br/>
+                         Saturday to Sunday 12pm to 11pm</p>
+                        </div>
+                <div class="social-media">
+                        <h3>Get Connected</h3>
+                        <a href="https://facebook.com"><i class="fab fa-facebook fa-2x"></i> Facebook</a>
+                        <a href="https://instagram.com"><i class="fab fa-instagram fa-2x"></i> Instagram</a>
+                        <a href="https://youtube.com"><i class="fab fa-youtube fa-2x"></i>Youtube</a>
+                        
+                    </div>
+                
+                <div class="contact-form" >
+                    <div >
+                   <h3 class="feedback">Feedback<h3/>
+                   <br/>
+                    <form action="about(1).php" method="post">
+                            <label>
+                            <div class="form">
+                                    <div  class="mu">
+                                        Name
+                                    </div>
+                                    <input id= 'name' type="name" name="name" value="" placeholder="write your name">
+                                </label>
+                        <label>
+                            <div class="mu">
+                                Email
+                            </div>
+                            <input id= 'user-email' type="email" name="user-email" value="" placeholder="username@example.com">
+                        </label>
+                        <label>
+                            <div class="mu">
+                                Subject
+                            </div>
+                            <input id='subject' type="text" name="subject" value="" placeholder="A short description about the matter">
+                        </label>
+                        <label>
+                            <div class="mu">
+                                Feedback
+                            </div>
+                            <textarea id='feedback' name="feedback"></textarea>
+
+                        </label>
+                        <div>
+                            <input id='submit-btn'type="submit" name="submit" value="Submit">		
+                        </div>
+                        </div>
+                    </form>	
+                    </div>
+                </div>
+           
+
+           
+            </main>
+            <script src="rest.js"></script>
+            </body>
+            </html>
+
+

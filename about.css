@@ -1,0 +1,73 @@
+
+.social-media >a{
+	display:block;
+	text-decoration: none;
+	color: black;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.contact-form input[type="submit"]{
+    width: 110px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    background-color: black;
+    color:white;
+    border-radius: 2px;
+    border:0;
+}
+.contact-form input[type="submit"]:hover{
+   
+    color: black;
+    background-color: red;
+}
+
+.contact-form,.social-media{
+	float: left;
+	width: 45%;
+	margin-left: 2%;
+	border: 5px solid black;
+	padding: 7px;
+	border-radius: 4px;
+	margin-top: 10px;
+}
+
+
+header > nav ul{
+	background-color:#3f2f2f;
+	text-align: center;
+	background: black;
+	border-bottom:5px solid red;
+	box-shadow: 3px 0px 5px grey;
+	margin-top: 20px;
+	padding: 0;
+}
+
+header > nav ul li>a{
+	text-decoration: none;
+	font-size: 16pt;
+	margin:auto;
+
+}
+
+header > nav ul li {
+	display: inline-block;
+	margin-left: 10px;
+	padding: 10px;
+	color:white;
+	font-family: sans-serif;
+}
+
+header > nav ul li:hover{
+	background: red;
+	font-weight: bold;
+}
+
+h1{
+	font-family: serif;
+	color:black;
+	text-align: center;
+	font-size: 50px;
+    font-style: italic;
+}

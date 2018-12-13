@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurant Management System</title>
+	<link rel="stylesheet" type="text/css" href="rest.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+<body>
+ <?php
+    session_start();
+    if($_SESSION['user']==true){
+      echo "<div class='session'>";
+    echo "Welcome"."  ".$_SESSION['user'];
+    echo "</div>";
+  }
+ 
+   
+
+
+    ?>
+	<h1 id="grill">Grill And Chill Restaurant</h1>
+	<img src="logo.jpg" id="img"></img>
+
+	<header>
+		<nav>
+			<ul>
+			<img src="img.png" id="chill">
+      <i class="fa fa-bars" aria-hidden="true" style="font-size:30px ;color:white;float:right;margin-top:7px ;padding-left:10px"></i>
+      
+				<li><a href="rest2.php">Home</a></li>
+				<li><a href="login-form.php">Login</a></li>
+				 <li><a href="logout.php">Logout</a></li>
+
+				<li><a href="menu4.php">Menu</a></li>
+				
+				<li><a href="online.php">Reservation</a></li>
+
+				<li><a href="about(1).php">About</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div class="slideshow">
+	<hr>
+	<img src ="citizen6.jpg"  id="slideimage">
+	</div>
+	
+
+	<h2 id="nonveg">Non-veg</h2>
+	
+	<ul>
+	<div class="nonveg">
+
+	<li for="Mutton korma">Mutton korma............................. Rs.120</li><br>
+
+	<li for="Mutton Briyani">Mutton Briyani ............................. Rs.135</li><br>
+	
+	<li for="Chicken Briyani">Chicken Briyani............................. Rs.130</li><br>
+	
+	<li for="Fish Briyani">Fish Briyani................................ Rs.120</li><br>
+	
+	<li for="Chicken 65">Chicken 65....................................... Rs.145</li><br>
+	
+	<li for="Nihari Ghost">Nihari Ghost.................................. Rs.140</li><br>
+
+	<li for="Bhuna kaleji">Bhuna kaleji.................................. Rs.135</li><br>
+	
+	<li for="Chicken chili">Chicken chili.................................. Rs.140</li><br>
+	<li for="paya">Paya.................................................. Rs.140</li><br>
+	</div>
+</ul>
+<input type=button id="back" onClick="parent.location='menu4.html'" value='Back'>
+	<script src="rest.js" type="text/javascript"></script>
+	<footer>    
+       <div class="copy">
+      &copy; 2018 | <a href="#">Privacy Policy</a> <br> Website   designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a>
+      </div>
+  
+ 
+</footer>
+
+	</body>
+	</html>
